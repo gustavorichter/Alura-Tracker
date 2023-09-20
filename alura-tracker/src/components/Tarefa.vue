@@ -22,3 +22,9 @@
         }
     })
 </script>
+
+<style scoped>
+.box {
+    background-color: #FAF0CA;
+}
+</style>
