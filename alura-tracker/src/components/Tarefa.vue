@@ -1,0 +1,24 @@
+
+<template>
+    <div class="box has-text-weght-bold">
+        <div class="columns">
+            <div class="column is-7">
+                Descrição da terefa
+            </div>
+            <div class="column">
+                <Cronometro tempoEmSegundos="15"/>
+            </div>
+        </div>
+    </div>
+</template>
+<script lang="ts">
+    import { defineComponent } from "vue";
+    import Cronometro from './Cronometro.vue';
+
+    export default defineComponent({
+        name: "Tarefa",
+        components: {
+            Cronometro
+        }
+    })
+</script>
