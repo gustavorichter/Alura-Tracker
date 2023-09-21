@@ -28,6 +28,6 @@
 <style scoped>
 	.display {
 		color: var(--texto-primario);
-		background-color: var(--bg-primario);
+		background-color: none;
 	}
 </style>
