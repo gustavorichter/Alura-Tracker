@@ -1,45 +1,41 @@
 <template>
-	<Formulario @aoSalvarTarefa="salvarTarefa"/>
+	<Formulario @aoSalvarTarefa="salvarTarefa" />
 	<div class="lista">
-		<Box v-if="semTarefa">
-			Você não possui tarefas!
+		<Box v-if="semTarefas">
+			Você não está muito produtivo hoje <span class="has-text-weight-bold">:(</span>
 		</Box>
-		<tarefa v-for="(tarefa, index) in tarefas" :key="index" :tarefa="tarefa"/>
+		<Tarefa v-for="(tarefa, index) in tarefas" :tarefa="tarefa" :key="index" />
 	</div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import Formulario from '../components/Formulario.vue';
-import Tarefa from '../components/Tarefa.vue';
-import ITarefa from '../interfaces/ITarefa'
-import Box from '../components/Box.vue';
+import { defineComponent } from "vue";
+import Formulario from "../components/Formulario.vue";
+import Tarefa from "../components/Tarefa.vue";
+import Box from "../components/Box.vue";
+import ITarefa from "../interfaces/ITarefa"
 
 export default defineComponent({
-	name: 'Tarefas',
+	name: "App",
 	components: {
-	Formulario,
-	Tarefa,
-	Box
-},
+		Formulario,
+		Tarefa,
+		Box
+	},
 	data() {
 		return {
 			tarefas: [] as ITarefa[]
 		}
 	},
-	computed: {
-		semTarefa(): boolean {
-			return this.tarefas.length === 0
+	methods: {
+		salvarTarefa(tarefa: ITarefa): void {
+			this.tarefas.push(tarefa)
 		}
 	},
-	methods: {
-		salvarTarefa(tarefa: ITarefa) {
-			this.tarefas.push(tarefa);
+	computed: {
+		semTarefas(): boolean {
+			return this.tarefas.length == 0
 		}
 	}
 });
 </script>
-
-<style>
-	
-</style>
