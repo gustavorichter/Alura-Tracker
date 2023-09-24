@@ -9,6 +9,7 @@ APP Publicado: https://alura-tracker-gustavo-richter.vercel.app/#/
 
 
 Tive um erro ao buildar para produção, resolvi com os comandos:
+
 On Windows command prompt:
 
 ```set NODE_OPTIONS=--openssl-legacy-provider```
@@ -18,10 +19,16 @@ On PowerShell:
 ```$env:NODE_OPTIONS = "--openssl-legacy-provider"```
 
 
+
+
 Esse problema pode ocorrer na Versel, para corrigir segui os seguintes passos:
 
 Faça login na sua conta da Vercel.
+
 Selecione o projeto que você está implantando.
+
 Navegue até as configurações do projeto ou configurações de implantação.
+
 Procure uma seção onde você possa definir variáveis de ambiente.
+
 Adicione uma variável de ambiente chamada ```NODE_OPTIONS``` com o valor ```--openssl-legacy-provider```.
